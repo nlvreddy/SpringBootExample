@@ -1,3 +1,5 @@
+
+
 @REM ----------------------------------------------------------------------------
 @REM Licensed to the Apache Software Foundation (ASF) under one
 @REM or more contributor license agreements.  See the NOTICE file
@@ -32,7 +34,6 @@
 @REM set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
 @REM MAVEN_SKIP_RC - flag to disable loading of mavenrc files
 @REM ----------------------------------------------------------------------------
-
 @REM Begin all REM lines with '@' in case MAVEN_BATCH_ECHO is 'on'
 @echo off
 @REM set title of command window
@@ -66,7 +67,6 @@ echo Please set the JAVA_HOME variable in your environment to match the >&2
 echo location of your Java installation. >&2
 echo.
 goto error
-
 :OkJHome
 if exist "%JAVA_HOME%\bin\java.exe" goto init
 
@@ -105,7 +105,6 @@ goto endDetectBaseDir
 :baseDirNotFound
 set MAVEN_PROJECTBASEDIR=%EXEC_DIR%
 cd "%EXEC_DIR%"
-
 :endDetectBaseDir
 
 IF NOT EXIST "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config" goto endReadAdditionalConfig
@@ -122,7 +121,7 @@ set WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
 
 set DOWNLOAD_URL="https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.4.2/maven-wrapper-0.4.2.jar"
 FOR /F "tokens=1,2 delims==" %%A IN (%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.properties) DO (
-	IF "%%A"=="wrapperUrl" SET DOWNLOAD_URL=%%B 
+        IF "%%A"=="wrapperUrl" SET DOWNLOAD_URL=%%B
 )
 
 @REM Extension to allow automatically downloading the maven-wrapper.jar from Maven-central
@@ -131,16 +130,16 @@ if exist %WRAPPER_JAR% (
     echo Found %WRAPPER_JAR%
 ) else (
     echo Couldn't find %WRAPPER_JAR%, downloading it ...
-	echo Downloading from: %DOWNLOAD_URL%
+        echo Downloading from: %DOWNLOAD_URL%
     powershell -Command "(New-Object Net.WebClient).DownloadFile('%DOWNLOAD_URL%', '%WRAPPER_JAR%')"
     echo Finished downloading %WRAPPER_JAR%
 )
 @REM End of extension
 
-%MAVEN_JAVA_EXE% %JVM_CONFIG_MAVEN_PROPS% %MAVEN_OPTS% %MAVEN_DEBUG_OPTS% -classpath %WRAPPER_JAR% "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" %WRAPPER_LAUNCHER% %MAVEN_CONFIG% %*
+%MAVEN_JAVA_EXE% %JVM_CONFIG_MAVEN_PROPS% %MAVEN_OPTS% %MAVEN_DEBUG_OPTS% -classpath %WRAPPER_JAR% "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" %W
+RAPPER_LAUNCHER% %MAVEN_CONFIG% %*
 if ERRORLEVEL 1 goto error
 goto end
-
 :error
 set ERROR_CODE=1
 
@@ -159,3 +158,4 @@ if "%MAVEN_BATCH_PAUSE%" == "on" pause
 if "%MAVEN_TERMINATE_CMD%" == "on" exit %ERROR_CODE%
 
 exit /B %ERROR_CODE%
+
